@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotView</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="./index.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="navbar">
+      <div class="logo">
+        <img src="./assets/logo.svg" alt="HotView Logo">
+      </div>
+      <nav class="header-links" id="nav">
+        <!--JS shall fill this-->
+      </nav>
+    </div>
+  </header>
+
+    <!-- Hero Section slideshow?--> 
+    <section class="hero"> 
+        <div class="hero-content"> 
+            <h1>Welcome to HotView</h1>
+            <p>Thoughts on a wide range of topics</p>
+        </div>
+    </section>
+    <!-- Carousel Section -->
+    <section class="carousel">
+      <div id="carouselSlide"></div>
+      <div class="carousel-btn">
+        <button id="prevBtn" aria-label="Previous Post">&lt;</button>
+        <button id="nextBtn" aria-label="Next Post">&gt;</button>
+      </div>
+    </section>
+    <!-- Featured posts Section -->
+    <section class="featured-posts"> 
+        <div id="post-grid"></div>
+    </section>
+    <footer class="footer">
+      <div class="footer-assets">
+        <div class="logo">
+          <img src="./assets/logo.svg" alt="HotView Logo">
+        </div>
+        <p>&copy; 2024 HotView. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- Link to external JavaScript file -->
+     <script src="./nav.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

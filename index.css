@@ -1,0 +1,568 @@
+*, 
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}       
+html,body {
+    width: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-family: 'Sora', sans-serif;
+    background-color: #f6efe8;
+    color: #313131;
+    margin: 0;
+}
+
+/*header/navbar*/
+
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    min-height: 56px;
+}
+
+.header{
+    width: 100%;
+    background-color: #f6efe8;
+}
+.header-links {
+    font-family: "Saira Stencil One", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+
+.header-links a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    white-space: nowrap;
+}
+
+.logo img {
+    display: block;
+    height: 56px;  /*mobile*/
+    width: auto;
+}
+
+
+/*footer*/
+
+.footer {
+  padding: 20px 40px;
+  border-top: 1px solid #c67c4e;
+}
+
+.footer-assets{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+footer .logo img {
+    height: 40px;
+    width: auto;
+}
+
+footer p {
+    font-size: 12px;
+    color: #313131; 
+    margin: 0;
+  }
+
+/*hero*/
+.hero {
+    min-height: 100svh;
+    background-color: #c67c4e;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: #313131;
+}
+
+.hero-content h1 {
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+.hero-btn{
+    height: 44px;
+    min-width: 195px;
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 24px;
+    background-color: #f6efe8;
+    border: none;
+    border-radius: 8px;
+    opacity: 0.7;
+}
+
+/*featured posts grid*/
+.post-card img{ 
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: visible;
+    transition: 0.2s ease;
+}
+
+#post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px;
+}
+
+.post-title{
+    font-size: 16px;
+    margin: 8px 0;
+    font-weight: 600;
+    font-family: 'Saira Stencil One', sans-serif;
+}
+
+.post-body{
+    font-size: 14px;
+    color: #313131;
+    margin-bottom: 8px;
+}
+
+.product-link  {
+    text-decoration: none;
+    display: block;
+    transition: 0.2s ease;
+    color: inherit;
+}
+
+.product-link:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+/*post page*/
+
+#post-container {
+    max-width: 800px;
+    margin: 32px auto;
+    padding: 0 16px;
+    justify-content: center;
+}
+
+#post-container p{
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+#post-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 32px auto;
+} 
+
+.share-btn{
+    display:block;
+    margin: 24px auto;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 24px;
+    background-color: #c67c4e;
+    border: none;
+    color: #f6efe8;
+    border-radius: 8px;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.2s ease;
+} 
+.share-btn:hover, .back-btn:hover {
+    background-color: #f6efe8;
+    color: #c67c4e;
+    transform: scale(1.05);
+} 
+
+.share-btn:active, .back-btn:active {
+    background-color: #c67c4e;
+    color: #f6efe8;
+    transform: scale(0.95);
+} 
+
+.back-btn {
+    color: #313131;
+    font-weight: 600;
+    font-size: 18px;
+    font-family:'Saira Stencil One', sans-serif;
+    text-decoration: none;
+}
+
+/*register page */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+form input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+form button {
+    height: 44px;
+    min-width: 195px;
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 24px;
+    background-color: #c67c4e;
+    border: none;
+    color: #f6efe8;
+    border-radius: 8px; 
+}
+
+form button:hover {
+    background-color: #f6efe8;
+    color: #c67c4e;
+    transform: scale(1.05);
+    cursor: pointer;
+    opacity: 1;
+}
+
+.register-main, .login-main {
+    max-width: 500px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+.register-main h1, .login-main h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 24px;
+    font-family: 'Saira Stencil One', sans-serif;
+}
+
+.register-main p, .login-main p {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 24px;
+    color: #313131;
+}
+
+.register-main a, .login-main a {
+    text-decoration: none;
+    color: #c67c4e;
+    font-weight: 600;
+}
+
+/*carousel*/
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+#carouselSlide {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+
+}
+
+#carouselSlide img{
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.carousel-btn button {
+    height: 44px;
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 0 24px;
+    background-color: #c67c4e;
+    border: none;
+    color: #f6efe8;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/*edit button*/
+
+.owner-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+    align-items: center;
+}
+
+.form-header h1{
+    font-size: 32px;
+    text-align: center;
+    font-family: 'Saira Stencil One', sans-serif;
+}
+.edit-btn, .delete-btn, #deleteBtn{
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #c67c4e;
+    color: #f6efe8;
+    text-decoration: none;
+}
+
+#deleteBtn {
+    background-color: #c62828;
+    font-size: 20px;
+}
+
+/* Media Queries for responsiveness */
+
+@media (min-width: 768px) {
+  .header-links { 
+    gap: 40px;
+  }
+  .header-links a {
+    font-size: 20px;
+  }
+  
+  .logo img { 
+    height: 96px;
+  }  
+
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content p {
+    font-size: 24px;
+  }
+
+  .hero-btn{
+    height: 48px;
+    min-width: 220px;
+    font-size: 20px;
+    padding: 0 28px;
+  }
+
+  #post-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .post-title{
+    font-size: 18px;
+  }
+  .post-body{
+    font-size: 16px;
+  }
+
+  #post-container img {
+    max-width: 90%;
+  }
+
+  #post-container p{
+    font-size: 20px;
+  }
+
+  .share-btn{
+    font-size: 22px;
+    padding: 0 28px;
+  }
+
+  form input {
+    font-size: 20px;
+  }
+
+  form button {
+    height: 48px;
+    min-width: 220px;
+    font-size: 20px;
+    padding: 0 28px;
+  }
+
+  .register-main h1, .login-main h1 {
+    font-size: 40px;
+  }
+
+  .register-main p, .login-main p {
+    font-size: 20px;
+  }
+
+  /*carousel*/
+
+  .carousel{
+    display: flex;
+    gap: 16px;
+    padding: 12px;
+    align-items: center;
+  }
+
+  #carouselSlide img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+
+  /*footer*/
+
+  .footer .logo img {
+    height: 60px;
+    width: auto;
+  }
+
+  footer p {
+    font-size: 14px;
+    color: #313131; 
+    margin: 0;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .header-links { 
+    gap: 60px;
+  }
+  .header-links a {
+    font-size: 22px;
+  }
+
+  .logo img { 
+    height: 110px;
+  }
+
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero-btn{
+    height: 52px;
+    min-width: 240px;
+    font-size: 22px;
+    padding: 0 32px;
+  }
+  #post-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding: 32px;
+  }
+  .post-title{
+    font-size: 20px;
+  }
+  .post-body{
+    font-size: 18px;
+  }
+
+  #post-container img {
+    max-width: 800px;
+  }
+
+  #post-container p{
+    font-size: 22px;
+  }
+  .share-btn{
+    font-size: 26px;
+    padding: 0 32px;
+  }
+
+  form input {
+    font-size: 22px;
+  } 
+
+  form button {
+    height: 52px;
+    min-width: 240px;
+    font-size: 22px;
+    padding: 0 32px;
+  }
+
+  .register-main h1, .login-main h1 {
+    font-size: 48px;
+  }
+
+  .register-main p, .login-main p {
+    font-size: 22px;
+  }
+
+    /*footer*/
+
+  .footer .logo img {
+    height: 80px;
+    width: auto;
+  }
+
+  footer p {
+    font-size: 18px;
+    color: #313131; 
+    margin: 0;
+  }
+
+}

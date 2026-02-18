@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="../index.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="form-page">
+        <section class="form-card">
+            <header class="form-header">
+                <h1>Edit Post</h1>
+            </header>
+            <form id="editForm">
+                <label>Title</label>
+                <input type="text" id="title" placeholder="Post title" required>
+
+                <label>Body</label>
+                <textarea id="body" placeholder="Post body" rows="8"></textarea>
+
+                <label>IMG URL</label>
+                <input type="url" id="imgUrl" placeholder="https://...">
+
+                <label>IMG Alt Text</label>
+                <input type="text" id="imgAlt" placeholder="Describe the image">
+
+                <div>
+                  <button type="submit">Update Post</button>
+                   <button id="deleteBtn">Delete Post</button>
+                </div>
+
+                <p id="message"></p>
+                <p><a href="../index.html" class="back-btn">Back to Home</a></p>
+            </form>
+        </section>
+    </main>
+    <script src="../nav.js"></script>
+    <script src="./edit.js"></script>
+</body>
+</html>

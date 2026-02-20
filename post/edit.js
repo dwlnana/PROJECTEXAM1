@@ -6,7 +6,10 @@ const message = document.getElementById("message");
 const form = document.getElementById("editForm");
 const deleteBtn = document.getElementById("deleteBtn");
 
-if (!token || name !== OWNER) {
+const isOwner = Boolean(token) && name === OWNER;
+
+
+if (!isOwner) {
   alert("You must be logged in as the owner to edit a post.");
   window.location.href = "../account/login.html";
 }
@@ -16,10 +19,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get("id");
 
 if (!postId) {
-  message.textContent = "Post ID not specified.";
-  form.style.display = "none";
-  deleteBtn.style.display = "none";
-} else {
+  message.textContent = "Missing post ID in URL.";
+}  else {
   fetch(`https://v2.api.noroff.dev/blog/posts/${OWNER}/${postId}`)
     .then((res) => res.json())
     .then((data) => {
@@ -93,6 +94,8 @@ deleteBtn.addEventListener("click", function () {
 
   message.textContent = "Deleting post...";
 
+  const token = localStorage.getItem("token");
+
   fetch(`https://v2.api.noroff.dev/blog/posts/${OWNER}/${postId}`, {
     method: "DELETE",
     headers: {
@@ -100,12 +103,17 @@ deleteBtn.addEventListener("click", function () {
     },
   })
     .then((res) => {
-      if (!res.ok) throw new Error("Delete failed");
-      message.textContent = "Post deleted successfully!";
-      setTimeout(() => {
-        window.location.href = "./index.html";
-      }, 800);
-    })
+      return  res.json().catch(() => null).then((data) => {
+        if (!res.ok) {
+          message.textContent = "Failed to delete post: " + (data?.errors?.[0]?.message || "Unknown error");
+          return;
+        }
+        message.textContent = "Post deleted successfully!";
+        setTimeout(() => {
+          window.location.href = "../index.html";
+        }, 800);
+      });
+    })  
     .catch((error) => {
       console.error("Error occurred:", error);
       message.textContent = "An error occurred while deleting the post.";

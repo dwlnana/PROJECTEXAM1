@@ -43,26 +43,31 @@ form.addEventListener("submit", function (e) {
     },
     body: JSON.stringify(payload),
   })
-    .then(async res => {
-      const data = await res.json();
-      console.log("API response:", data);
-      if (!res.ok){
-        message.textContent = "Failed to create post: " + (data.errors?.[0]?.message || "Unknown error");
-        return;
-      } 
-      const newPostId = data.data.id;
-      if (!newPostId) {
-        message.textContent = "Post created but no ID returned.";
-        return;
-      }
-      message.textContent = "Post created successfully!";
-      form.reset();
 
-      // Redirect to the newly created post page
-      window.location.href = `./index.html?id=${newPostId}`;
-  })
-  .catch(error => {
-    console.error("Error occurred:", error);
-    message.textContent = "An error occurred while creating the post.";
-  });
+    .then((res) => {
+      return res.json().then((data) => {
+        console.log("Response from API:", data);
+
+        if (!res.ok) {
+          message.textContent = "Failed to create post: " + (data.errors?.[0]?.message || "unknown error");
+        return;
+        }
+
+        const newPostId = data.data.id;
+        if (!newPostId) {
+          message.textContent = "Post created but no ID returned.";
+          return;
+        }
+
+        message.textContent = "Post created successfully!";
+        form.reset();
+        setTimeout(() => {
+          window.location.href = `./index.html?id=${newPostId}`;
+        }, 800);
+      });
+    })
+    .catch((error) => {
+      console.error("Error creating post:", error);
+      message.textContent = "Error creating post.";
+    });
 });

@@ -38,7 +38,7 @@ form.addEventListener("submit", function (e) {
       name: displayName,
     }); 
     message.textContent = "Login successful!";
-    window.location.href = "/index.html"; // Redirect to homepage after successful login
+    window.location.href = "../index.html"; // Redirect to homepage after successful login
   })
   .catch(error => {
     console.error("Error occurred:", error);

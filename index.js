@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ${imgUrl ? `<img src="${imgUrl}" alt="${imgAlt}">` : ''}
       <h2>${post.title}</h2>
       <p>${post.body}</p>
-      <a href="./post/index.html?id=${post.id}" class="read-more-btn">Read More</a>
+      <a href="../post/index.html?id=${post.id}" class="read-more-btn">Read More</a>
     `;
   }
 
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${imgUrl ? `<img src="${imgUrl}" alt="${imgAlt}">` : ""}
             <h3 class="post-title">${post.title}</h3>
             <p class="post-body">${post.body}</p>
-            <a href="./post/index.html?id=${post.id}" class="read-more-btn">Read More</a>
+            <a href="../post/index.html?id=${post.id}" class="read-more-btn">Read More</a>
           </div>
         `;
       });

@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="./index.html">Home</a>
         ${isOwner ? `<a href="./post/create.html">Create Post</a>` : ""}
         ${isLoggedIn ? `<a href="#" id="logoutBtn">Logout</a>` : `
-            <a href="./account/login.html">Login</a>
-            <a href="./account/register.html">Register</a>
+            <a href="../account/login.html">Login</a>
+            <a href="../account/register.html">Register</a>
         `}
     `;
 

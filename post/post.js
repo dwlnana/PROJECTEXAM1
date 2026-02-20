@@ -1,5 +1,5 @@
 const container = document.getElementById("post-container");
-const shareBtn = document.getElementById("post-btn");
+const shareBtn = document.getElementById("share-btn");
 const shareMessage = document.getElementById("share-message");
 
 const OWNER = "naima_05521";
@@ -35,7 +35,7 @@ if (!postId) {
           isOwner
             ? `
               <div class="owner-actions">
-                <a href="/post/edit.html?id=${postId}" class="edit-btn">Edit Post</a>
+                <a href="./edit.html?id=${postId}" class="edit-btn">Edit Post</a>
                 <button id="deleteBtn" class="delete-btn" type="button">Delete Post</button>
                 <p id="ownerMessage"></p>
               </div>
@@ -63,7 +63,7 @@ if (!postId) {
               if (res.ok) {
                 ownerMessage.textContent = "Post deleted successfully!";
                 setTimeout(() => {
-                  window.location.href = "/index.html";
+                  window.location.href = "../index.html";
                 }, 800);
                 return;
               }

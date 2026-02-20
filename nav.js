@@ -13,15 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem("token");
         localStorage.removeItem("name");
         localStorage.removeItem("username");
-        window.location.href = "/index.html";
+        window.location.href = "./index.html";
     }
 
     nav.innerHTML = `
         <a href="./index.html">Home</a>
         ${isOwner ? `<a href="./post/create.html">Create Post</a>` : ""}
         ${isLoggedIn ? `<a href="#" id="logoutBtn">Logout</a>` : `
-            <a href="../account/login.html">Login</a>
-            <a href="../account/register.html">Register</a>
+            <a href="./account/login.html">Login</a>
+            <a href="./account/register.html">Register</a>
         `}
     `;
 

@@ -78,7 +78,7 @@ form.addEventListener("submit", function (e) {
 
       message.textContent = "Post updated successfully!";
       setTimeout(() => {
-        window.location.href = `/post/index.html?id=${postId}`;
+        window.location.href = `./index.html?id=${postId}`;
       }, 800);
     })
     .catch((error) => {
@@ -103,7 +103,7 @@ deleteBtn.addEventListener("click", function () {
       if (!res.ok) throw new Error("Delete failed");
       message.textContent = "Post deleted successfully!";
       setTimeout(() => {
-        window.location.href = "../index.html";
+        window.location.href = "./index.html";
       }, 800);
     })
     .catch((error) => {
